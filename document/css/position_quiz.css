@@ -1,0 +1,77 @@
+.face {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: #333;
+  border-radius: 50%;
+}
+
+
+.face .reye {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%) rotate(225deg);
+  width: 50px;
+  height: 50px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+}
+
+.face .reye.on {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 50px;
+  height: 50px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+}
+
+.face .leye {
+  position: absolute;
+  top: 40%;
+  right: 30%;
+  transform: translate(-50%, -50%) rotate(225deg);
+  width: 50px;
+  height: 50px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+}
+
+.face .leye.on {
+  position: absolute;
+  top: 40%;
+  right: 30%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 50px;
+  height: 50px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+}
+
+.face .mouth {
+  position: absolute;
+  bottom: 30%;
+  right: 40%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 50px;
+  height: 50px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+}
+
+.face .mouth.on {
+  position: absolute;
+  bottom: 30%;
+  right: 40%;
+  transform: translate(-50%, -50%) rotate(225deg);
+  width: 50px;
+  height: 50px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+}

@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.event {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.event h2 {
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.event h2::after {
+  content: "";
+  width: 200px;
+  height: 1px;
+  display: inline-block;
+  background: lightcoral;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+.event h2::before {
+  content: "";
+  width: 200px;
+  height: 1px;
+  display: inline-block;
+  background: lightcoral;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+.event p {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.event .container {
+  width: 1200px;
+  display: flex;
+  margin: 0 auto 30px auto;
+  gap: 30px;
+}
+
+.event .container::after {
+  content: "";
+  width: 1px;
+  height: 200px;
+  display: block;
+  background: lightcoral;
+  margin: auto;
+}
+
+.event .container::before {
+  content: "";
+  width: 1px;
+  height: 200px;
+  display: block;
+  background: lightcoral;
+  margin: auto;
+
+}
+
+.event .container figure {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.event .container img {
+  max-width: 100%;
+  transition: 0.5s;
+}
+
+.event .container a {
+  position: absolute;
+  bottom: -50px;
+  left: 40px;
+  background: #333;
+  color: azure;
+  padding: 10px 30px;
+  transition: 0.5s;
+}
+
+.event .container img:hover {
+  transform: scale(2);
+}
+
+.event figure:hover a {
+  bottom: 0;
+}
+
+.event i {
+  background: #333;
+  color: aliceblue;
+  padding: 10px;
+  border-radius: 50%;
+  margin: 20px 30px;
+  transition: 0.5s;
+}
+
+.event i:hover {
+  transform: rotate(360deg);
+}

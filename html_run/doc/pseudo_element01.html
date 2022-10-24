@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pseudo element 01 - 가상요소 선택자</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <style>
+    section {
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    section:nth-child(even) {
+      background: #fdeaea;
+    }
+
+    section h2 {
+      font-size: 31px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+
+    section p {
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: -0.025em;
+      margin-bottom: 30px;
+    }
+
+    section .container {
+      display: flex;
+      gap: 30px;
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    section .container figure {
+      flex: 1;
+    }
+
+    section .container figure img {
+      max-width: 100%;
+    }
+
+    .psd01 h2::before {
+      content: "앞";
+    }
+
+    .psd01 h2::after {
+      content: "뒤";
+    }
+
+    .psd02 h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 1px;
+      background: coral;
+      margin: 20px auto;
+    }
+
+    .psd03 h2::before {
+      content: "";
+      display: inline-block;
+      width: 80px;
+      height: 1px;
+      background: coral;
+      vertical-align: middle;
+      margin: -5px 10px 0 0;
+    }
+
+    .psd03 h2::after {
+      content: "";
+      display: inline-block;
+      width: 80px;
+      height: 1px;
+      background: coral;
+      vertical-align: middle;
+      margin: -5px 0 0 10px;
+    }
+
+    .psd04 h2::after {
+      content: "\e9bf";
+      /*noto sans font에서 제대로 안나온다.*/
+      font-family: xeicon !important;
+    }
+
+    .psd04 figure::after {
+      content: "\e9bf";
+      font-family: xeicon !important;
+    }
+
+    .dot_list {
+      width: 400px;
+
+    }
+
+    .dot_list>li {
+      position: relative;
+      text-align: left;
+      padding: 0 0 0 20px;
+      line-height: 1.2;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .dot_list>li::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 4px;
+      height: 4px;
+      background: #f00;
+      border-radius: 50%;
+    }
+
+    .psd05 figure {
+      position: relative;
+    }
+
+    .psd05 figure::after {
+      content: attr(data-num);
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      background: rgb(255, 184, 184);
+      padding: 30px;
+      border-radius: 50%;
+      font-size: 30px;
+      color: #fff;
+      transition: 2s;
+    }
+
+    .psd05 figure:hover::after {
+      transform: rotateX(720deg);
+    }
+
+    .psd05 h2::after {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 40px;
+      background: green;
+      border-radius: 60% 0;
+      transform: rotate(15deg);
+      margin: 0 auto;
+    }
+
+    hr.list_hr {
+      position: relative;
+      border: none;
+      /*기존에 hr은 사방으로 top, bottom, left,rigte모두 border가 생겨서 지워주고
+      border-top값을 줌*/
+      border-top: 1px solid #ddd;
+      margin: 50px 0;
+      overflow: visible;
+    }
+
+    hr.list_hr::after {
+      content: "\e907";
+      /*기존의 hr에 overflow가 있어서 안보였었다*/
+      font-family: xeicon !important;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      background: #fdeaea;
+      padding: 20px;
+      font-size: 20px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="psd01">
+    <h2>Lorem ipsum dolor sit.</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ullam nulla commodi iusto
+      aliquid sint cumque iure eligendi, repellat officia.</p>
+    <div class="container">
+      <figure>
+        <img src="../img/lesedilarona01.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="../img/lesedilarona02.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="../img/lesedilarona03.jpg" alt="">
+      </figure>
+    </div>
+  </section>
+
+  <section class="psd02">
+    <h2>Lorem ipsum dolor sit.</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ullam nulla commodi iusto
+      aliquid sint cumque iure eligendi, repellat officia.</p>
+    <div class="container">
+      <figure>
+        <img src="../img/lesedilarona01.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="../img/lesedilarona02.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="../img/lesedilarona03.jpg" alt="">
+      </figure>
+    </div>
+  </section>
+
+  <section class="psd03">
+    <h2>Lorem ipsum dolor sit.</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ullam nulla commodi iusto
+      aliquid sint cumque iure eligendi, repellat officia.</p>
+    <div class="container">
+      <figure>
+        <img src="../img/lesedilarona01.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="../img/lesedilarona02.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="../img/lesedilarona03.jpg" alt="">
+      </figure>
+    </div>
+  </section>
+
+  <section class="psd04">
+    <h2><i class="xi-arrow-right"></i>Lorem ipsum dolor sit.</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ullam nulla commodi iusto
+      aliquid sint cumque iure eligendi, repellat officia.</p>
+    <div class="container">
+      <ul class="dot_list">
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint cumque iure eligendi,
+          repellat officia.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="psd05">
+    <h2>Lorem ipsum dolor sit.</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ullam nulla commodi iusto
+      aliquid sint cumque iure eligendi, repellat officia.</p>
+    <div class="container">
+      <figure data-num="01">
+        <img src="../img/lesedilarona01.jpg" alt="">
+      </figure>
+      <figure data-num="02">
+        <img src="../img/lesedilarona02.jpg" alt="">
+      </figure>
+      <figure data-num="03">
+        <img src="../img/lesedilarona03.jpg" alt="">
+      </figure>
+    </div>
+  </section>
+
+  <section class="psd06">
+    <h2>Lorem ipsum dolor sit.</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ullam nulla commodi iusto
+      aliquid sint cumque iure eligendi, repellat officia.</p>
+    <hr class="list_hr">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ullam nulla commodi iusto
+      aliquid sint cumque iure eligendi, repellat officia.</p>
+    <div class="container">
+      <figure>
+        <img src="../img/lesedilarona01.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="../img/lesedilarona02.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="../img/lesedilarona03.jpg" alt="">
+      </figure>
+    </div>
+  </section>
+</body>
+
+</html>

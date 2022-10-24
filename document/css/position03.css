@@ -1,0 +1,114 @@
+/*font 와 아이콘 가져올 때 link말고 import*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  /*Noto Sans 는 폰트사이즈가 홀수일 때 가독성이 좋다.*/
+}
+
+#event {
+  /*이름이 단 하나니까 선택자 필요없음*/
+  padding: 100px 0;
+  text-align: center;
+  /*인라인 요소를 가운데로*/
+}
+
+#event i {
+  background: #333;
+  color: #fff;
+  /*font라서 색이 먹힘*/
+  padding: 10px;
+  border-radius: 50%;
+}
+
+#event h2 {
+  font-size: 21px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+/*가상요소 선택자*/
+/*가상요소 선택자는 그 태그의 자식으로 들어가서 부모태그의 속성을 이어받는다*/
+#event h2::before {
+  content: "";
+  display: inline-block;
+  /*inline-block으로 하면 글자 속성이니 h2옆으로 간다.*/
+  width: 100px;
+  height: 1px;
+  background: lightsalmon;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+#event h2::after {
+  content: "";
+  display: inline-block;
+  width: 100px;
+  height: 1px;
+  background: lightsalmon;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+/* #event h2::after {
+  content: "";
+  display: block; 여기서는 박스를 만들어라 라는 의미
+  width: 1px;
+  height: 100px;
+  background: lightsalmon;
+  margin: 20px auto;
+} */
+
+
+
+#event p {
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0 0 30px 0;
+  line-height: 1.4;
+}
+
+#event .container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  /*일반적인 수치*/
+}
+
+#event img {
+  max-width: 100%;
+  transition: .5s;
+  /*img에 애니메이션 걸리니까 여기에*/
+  /*부모에게 상속받아서 부모의 width값의 100%*/
+}
+
+#event figure {
+  position: relative;
+  /*기준만 되라~*/
+  flex: 1;
+  overflow: hidden;
+  /*figure의 박스 사이즈가 바뀌면 안되니까 여기*/
+}
+
+/*hover : 마우스가 올라갔을 때*/
+#event .container figure:hover img {
+  transform: scale(2);
+  /*레이아웃변경하지 않고(박스크기 변경안됨)scale 사이즈를 크게*/
+}
+
+#event figure a {
+  position: absolute;
+  top: -40px;
+  /*figure가 overflow hidden을 가지고 있으니 사라진다.*/
+  left: 0;
+  padding: 10px 30px;
+  background: #333;
+  color: #fff;
+  transition: 0.5s;
+}
+
+#event figure:hover a {
+  top: 0%;
+}

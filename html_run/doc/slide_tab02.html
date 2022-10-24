@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>slide - tab 2 높이로 슬라이드 겹치기</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/slick.css">
+  <style>
+    .tabCon>div {
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+
+    }
+
+    .tabCon>div.on {
+      height: auto;
+      visibility: visible;
+    }
+
+    /* slick에서 display no block을 쓰면 슬라이드가 깨진다.
+    그러므로 visiblity를 사용해야한다. */
+  </style>
+</head>
+
+<body>
+
+  <section>
+    <ul class="tabMenu">
+      <li>menu01</li>
+      <li>menu02</li>
+    </ul>
+
+    <div class="tabCon">
+      <div class="on">
+        <div class="left">
+          <figure>슬라이드라고 치자01</figure>
+          <figure>슬라이드라고 치자02</figure>
+          <figure>슬라이드라고 치자03</figure>
+          <figure>슬라이드라고 치자04</figure>
+        </div>
+      </div>
+      <div>
+        <div class="right">
+          <figure>슬라이드라고 치자01-2</figure>
+          <figure>슬라이드라고 치자02-2</figure>
+          <figure>슬라이드라고 치자03-2</figure>
+          <figure>슬라이드라고 치자04-2</figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/slick.min.js"></script>
+  <script>
+    $(function () {
+      $('.tabMenu>li').on('click', function () {
+        var idx = $(this).index();
+        $('.tabCon>div').removeClass('on')
+        $('.tabCon>div').eq(idx).addClass('on')
+      })
+
+      $('.left').slick({
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 1000,
+      })
+      $('.right').slick({
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 1000,
+      })
+
+    })
+  </script>
+</body>
+
+</html>

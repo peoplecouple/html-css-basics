@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/position03.css">
+  <script src="../js/position03.js"></script>
+  <title>Position 03 </title>
+</head>
+
+<body>
+  <section id="event">
+    <!--id는 class처럼 이름 두개 줄 수 없다.-->
+    <h2>
+      <i class="xi-bars"></i> <i class="xi-facebook"></i> Lorem ipsum dolor sit amet.
+      <!--<i>태그는 inline-block속성의 아이콘 넣는 태그
+        정사각형으로 아이콘 들어감-->
+    </h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio harum <br>aut sed, nihil reprehenderit magnam ullam! Deserunt ab ipsum
+      quia.</p>
+    <div class="container">
+      <figure>
+        <img src="../img/main_bg01.jpg" alt="">
+        <a href="#!">more</a>
+      </figure>
+      <figure>
+        <img src="../img/main_bg02.jpg" alt="">
+        <a href="#!">more the more</a>
+      </figure>
+      <figure>
+        <img src="../img/main_bg03.jpg" alt="">
+        <a href="#!">more</a>
+      </figure>
+    </div>
+  </section>
+
+</body>
+
+</html>
+
+<!--
+  css는 DOM과 관련이 없다.
+  js는 DOM제어, </body>위에 항상 붙히자
+  </body>아래에 붙히면 구현은 되지만 웹 접근성 검사 시 에러가 생긴다.
+  또는 head에 쓸 때 defer(DOM이 준비됬을 때 실행)이라는 명령어를 써주면 적용된다.
+-->
+
+<!--
+  ===인라인 태그===
+  span
+  strong
+  em
+  a
+-->

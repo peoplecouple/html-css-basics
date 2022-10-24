@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie 01 - 동영상 넣기</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/jquery.mb.YTPlayer.min.css">
+  <style>
+    body {
+      height: 200vh;
+    }
+
+    .fixed_bg {
+      background: url(../img/mainvisual01.jpg) no-repeat fixed center center/cover;
+      /*fixed는 아이폰에서 안됨, 플러그인 사용해야함*/
+      padding: 200px 0;
+      text-align: center;
+      color: #fff;
+    }
+
+    .movie01 {
+      padding: 100px 0;
+    }
+
+    .movie01 .container {
+      display: flex;
+      gap: 30px;
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    .movie01 .container>div {
+      flex: 1;
+    }
+
+    .movie01 video {
+      max-width: 100%;
+    }
+
+    .section h2 {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 15px;
+      font-weight: 300;
+      margin-bottom: 30px;
+    }
+
+    /* 
+    .movie01 .right{ 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    inner로 안쌌을 땐 이렇게 
+    */
+
+    .movie01 .right {
+      display: flex;
+      align-items: center;
+    }
+
+    .movie01 .right i {
+      padding: 10px;
+      font-size: 30px;
+      background: #f7f7f7;
+      border-radius: 3px;
+      margin: 0 10px 0 0;
+    }
+
+    .movie01 .right i:hover {
+      cursor: pointer;
+    }
+
+    .movie02 {
+      padding: 200px 0;
+      text-align: center;
+      color: #fff;
+    }
+
+    .movie02 i {
+      font-size: 30px;
+    }
+
+    .movie02 i:hover {
+      cursor: pointer;
+    }
+
+    #movie03 {
+      width: 500px;
+      height: 300px;
+      background-color: #f7f7f7;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="fixed_bg">
+    <h2>배경 고정하기 : parallax</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident vitae iste quidem
+      asperiores deserunt dolor delectus corporis necessitatibus qui? Culpa similique rem magnam
+      sint labore alias optio eos aut quas.</p>
+  </section>
+
+  <section class="movie01">
+    <div class="container">
+      <div class="left">
+        <video class="vd01" src="../img/Cave.mp4" autoplay muted playsinline></video>
+        <!-- muted : 설정하지 않으면 사이트 들어가자마자 소리 빵! -->
+        <!-- playsinline: 아이폰에서 새창띄우지 않고 바로 동영상 재생 -->
+      </div>
+      <div class="right">
+        <div class="inner">
+          <h2>MP4 동영상 플레이</h2>
+          <p>pixabay에서 동영상 가져옴</p>
+          <div class="control">
+            <i class="xi-pause"></i>
+            <i class="xi-play"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="movie02">
+    <div id="bgndVideo" class="player" data-property="">
+      <h2>유튜브 영상 배경으로 깔기 : parallax</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident vitae iste quidem
+        asperiores deserunt dolor delectus corporis necessitatibus qui? Culpa similique rem magnam
+        sint labore alias optio eos aut quas.</p>
+      <div class="control">
+        <i class="xi-pause"></i>
+        <i class="xi-play"></i>
+        <i class="xi-speaker"></i>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <div id="movie03"></div>
+
+
+  <!-- youtube 재생 플러그인
+https://pupunzi.com/#mb.components/mb.YTPlayer/YTPlayer.html
+https://github.com/pupunzi/jquery.mb.YTPlayer/wiki 여기 참고
+다운받아서 이 두 파일 여기 넣기
+jquery.mb.YTPlayer.min.js
+jquery.mb.YTPlayer.min.css
+배경 넣을 공간에 아이디 설정해주고  $('#bgndVideo').YTPlayer() jquery문 작성
+-->
+
+
+
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/jquery.mb.YTPlayer.min.js"></script>
+  <script>
+    $(function () {
+      $('.movie01 .right i:nth-child(1)').on('click', function () {
+        $('.vd01').trigger('pause')
+      })
+      $('.movie01 .right i:nth-child(2)').on('click', function () {
+        $('.vd01').trigger('play')
+      })
+
+      //js YTPlayer
+      $('#bgndVideo').YTPlayer({
+        videoURL: 'https://youtu.be/DAVybuFH1ZA',
+        containment: '.movie02', //body하면 배경에 영상깔림, .movie02하면 그 부분에 깔림
+        autoPlay: true,
+        mute: true,
+        startAt: 0,
+        opacity: 1,
+        showControls: false,
+        playOnlyIfVisible: true,
+        vol: 100,
+      });
+
+      $('.movie02 i:nth-child(1)').on('click', function () {
+        $('#bgndVideo').YTPPause();
+      })
+      $('.movie02 i:nth-child(2)').on('click', function () {
+        $('#bgndVideo').YTPPlay();
+      })
+      $('.movie02 i:nth-child(3)').on('click', function () {
+        $('#bgndVideo').YTPUnmute();
+      })
+
+
+
+      $('#movie03').YTPlayer({
+        videoURL: 'https://youtu.be/DAVybuFH1ZA',
+        containment: '#movie03', //body하면 배경에 영상깔림, .movie02하면 그 부분에 깔림
+        autoPlay: true,
+        mute: true,
+        startAt: 0,
+        opacity: 1,
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+/* multi column menu */
+.header{
+  line-height: 100px;
+}
+
+.header .container{
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.container nav>ul{
+  display: flex;
+}
+
+
+
+.container nav>ul>li{
+  position: relative;
+}
+
+.container nav>ul>li:hover ul{
+  top: 80px;
+  transition: 0.8s;
+  visibility: visible;
+}
+
+
+.container nav>ul ul{
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  border: 3px solid coral;
+  background: #fff; 
+  visibility: hidden; 
+}
+
+.container nav>ul ul>li{
+  width: 150px ;
+  line-height: 40px;
+  border-bottom: 1px solid coral;
+}
+
+.container nav>ul ul>li:last-child{
+  border: none;
+}
+
+
+.container nav a{
+  display: block;
+  padding: 0 25px;
+}
+
+.header .hamburger{
+  display: none;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  font-size: 25px;
+  padding: 5px;
+  background: #ddd;
+  line-height: 1;
+  border-radius: 5px;
+}
+
+@media(max-width:768px){
+  .header{
+    line-height: 100px;
+  }
+  
+  .header .container{
+    display: flex;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .container nav>ul{
+    position: absolute;
+    width: calc(100% - 300px);
+    height: 100vh;
+    top: 0;
+    left: -100%;
+    z-index: 998;
+    background: #fff;
+    border: 3px solid coral;
+    flex-direction: column;
+    transition: 1s;
+    line-height: 50px;
+  }
+  
+  .container nav.on ul{
+    left:0
+  }
+  
+  .container nav>ul ul{
+    position: static;
+    border: none;
+    visibility: visible;
+    justify-content: center;
+    transform: translateX(0%);
+    /*왼쪽으로 가있었기때문에 다시 땡겨줘야함*/
+  }
+
+  .container nav>ul ul>li{
+    width: 100%;
+    border: none;
+    background: #ddd;
+  }
+
+
+  /*여기서  transition:none; 을 줘야 안버벅 거림*/
+  .container nav>ul>li:hover ul{
+    transition:none;
+  }
+
+  .header .hamburger{
+   display: block;
+  }
+}
+
+/* slider */
+.main .main_visual{
+  position: relative;
+  height: 600px;
+  background: rgb(250, 165, 134);
+  margin-bottom: 30px;
+}
+
+
+
+/* footer */
+.footer{
+  margin: 0 0 30px 0;
+  text-align: center;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tab03 연습</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <style>
+    img {
+      max-width: 100%;
+    }
+
+    .tab {
+      padding: 100px 0;
+    }
+
+    .container {
+      display: flex;
+      width: 1200px;
+      margin: 0 auto;
+      gap: 10px;
+    }
+
+    .container ul {
+      flex: 1;
+    }
+
+    .tab_menu>li {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .tab_menu>li>a {
+      display: block;
+      padding: 15px;
+      background: #ddd;
+    }
+
+    .tab_menu>li.on a {
+      background: lavender;
+    }
+
+    .tab_content {
+      position: relative;
+      background: url(../img/72684975-대한민국지도.webp) no-repeat center center/contain;
+      height: 300px;
+      font-size: 0;
+    }
+
+    .tab_content>li::before {
+      content: "\eb59";
+      font-family: "xeicon";
+      font-size: 30px;
+      display: none;
+      animation: mark 1s;
+    }
+
+    .tab_content>li.on::before {
+      display: block;
+    }
+
+    .tab_content>li:nth-child(1) {
+      position: absolute;
+      inset: 30px 280px auto auto;
+    }
+
+    .tab_content>li:nth-child(2) {
+      position: absolute;
+      inset: 160px 245px auto auto;
+    }
+
+    .tab_content>li:nth-child(3) {
+      position: absolute;
+      inset: 250px auto auto 230px;
+    }
+
+    .tab_content>li:nth-child(4) {
+      position: absolute;
+      inset: 40px 154px auto auto;
+    }
+
+    @keyframes mark {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="tab">
+    <div class="container">
+      <ul class="tab_menu">
+        <li><a href="">서울</a></li>
+        <li><a href="">부산</a></li>
+        <li><a href="">제주도</a></li>
+        <li><a href="">독도</a></li>
+      </ul>
+
+      <ul class="tab_content">
+        <li>서울</li>
+        <li>부산</li>
+        <li>제주도</li>
+        <li>독도</li>
+      </ul>
+    </div>
+  </section>
+
+
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script>
+    $(function () {
+      $('.tab_menu>li>a').on('click', function (e) {
+        e.preventDefault();
+        var idx = $(this).parent().index();
+        $(this).parent().addClass('on').siblings().removeClass('on')
+        $('.tab_content>li').eq(idx).addClass('on').siblings().removeClass('on')
+      })
+
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>다단메뉴</title>
+  <style>
+    /* 간단한 리셋 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    #header {
+      position: relative;
+      line-height: 100px;
+    }
+
+    .container {
+      display: flex;
+      width: 1200px;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+
+    nav>ul {
+      /*자식선택자 쓰지 않으면 손자ul도 flex가 먹힌다.*/
+      display: flex;
+      gap: 120px;
+      text-align: center;
+    }
+
+    nav>ul>li {
+      position: relative;
+    }
+
+    nav a {
+      display: block;
+      /* nav ul ul의 line-height가 먹히도록 block을 준다*/
+    }
+
+    nav>ul::before {
+      /*smenu 바탕*/
+      content: "";
+      position: absolute;
+      top: 100px;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: #ff0;
+      z-index: 998;
+      transition: 0.5s;
+    }
+
+    nav>ul:hover::before {
+      height: 210px;
+    }
+
+    nav ul>li ul {
+      position: absolute;
+      left: 0;
+      background: #ff0;
+      z-index: 999;
+      /*마우스 올라가야 보여야하니까*/
+      width: 150px;
+      height: 0;
+      line-height: 40px;
+      transform: translateX(-30%);
+      overflow: hidden;
+      /*글자는 인라인 속성이라서 overflow먹여도 나오려는 속성이 있다.*/
+      transition: 0.5s;
+    }
+
+    nav>ul:hover>li ul {
+      height: 210px;
+    }
+
+    .main_visual {
+      /*slide가 있다고 가정해서 포지션을 줌*/
+      position: relative;
+      height: 500px;
+      background: #333;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!--
+    wrap-container : kebob case 
+    Wrap : pascal case
+    wrap_container : snake case
+    wrapContainer : camel case
+    Wrap_container-inner : BEM
+  -->
+  <div class="wrap">
+    <header id="header">
+      <!--relative-->
+      <div class="container">
+        <h1>LOGO</h1>
+        <nav>
+          <ul>
+            <li>
+              <!--relative-->
+              <a href="">menu01</a>
+              <ul>
+                <li><a href="">smenu01</a></li>
+                <li><a href="">smenu02</a></li>
+                <li><a href="">smenu03</a></li>
+                <li><a href="">smenu04</a></li>
+                <li><a href="">smenu05</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">menu02</a>
+              <ul>
+                <li><a href="">smenu01</a></li>
+                <li><a href="">smenu02</a></li>
+                <li><a href="">smenu03</a></li>
+                <li><a href="">smenu04</a></li>
+                <li><a href="">smenu05</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">menu03</a>
+              <ul>
+                <li><a href="">smenu01</a></li>
+                <li><a href="">smenu02</a></li>
+                <li><a href="">smenu03</a></li>
+                <li><a href="">smenu04</a></li>
+                <li><a href="">smenu05</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">menu04</a>
+              <ul>
+                <li><a href="">smenu01</a></li>
+                <li><a href="">smenu02</a></li>
+                <li><a href="">smenu03</a></li>
+                <li><a href="">smenu04</a></li>
+                <li><a href="">smenu05</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="main_visual">
+      </div>
+    </main>
+    <footer id="footer">
+      &copy; bae
+    </footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,444 @@
+.Wrap{}
+
+.inner{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.container{
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.topBanner{
+ padding: 30px 0;
+ background: rgb(255, 231, 235);
+}
+
+.topBanner .inner{
+  position: relative;
+}
+
+.topBanner .inner h2{
+  font-size: 31px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.topBanner .inner p{
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.topBanner .inner a{
+  display: inline-block;
+  padding: 5px 15px 8px 15px;
+  background: pink;
+  color: #fff;
+  border-radius: 3px;
+  margin: 0 0 0 20px;
+}
+
+.topBanner .inner i{
+  position: absolute;
+  inset: 0 0 auto auto;
+  padding: 5px;
+  background: pink;
+  color: #fff;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#header{
+  line-height: 100px;
+  border-bottom: 1px solid #ddd;
+}
+#header .container{
+  justify-content: space-between;
+}
+#header .container>nav>ul{
+  display: flex;
+}
+
+
+#header .container>nav>ul>li~li::before{
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  background: pink;
+}
+
+#header .container>nav>ul a{
+  display: inline-block;
+  padding: 0 15px;
+  font-size: 15px;
+}
+
+#header .container .searchForm input{
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgb(243, 125, 145);
+}
+
+#header .container .searchForm button{
+  border: none;
+  outline: none;
+  background: transparent;
+  color:  rgb(243, 125, 145);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.mainVisual .mainSlider figure{
+  position: relative;
+  height: 600px;
+}
+
+.mainVisual .mainSlider .itm01{
+  background: url(../img/mainvisual01.jpg) no-repeat center top/cover;
+}
+.mainVisual .mainSlider .itm02{
+  background: url(../img/mainvisual02.jpg) no-repeat center top/cover;
+}
+.mainVisual .mainSlider .itm03{
+  background: url(../img/mainvisual03.jpg) no-repeat center top/cover;
+}
+
+.mainVisual .mainSlider .inner{
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+
+}
+
+.mainVisual .mainSlider figure h2{
+  font-size: 41px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  transform: translateY(100px);
+  opacity: 0;
+
+}
+
+.mainVisual .mainSlider figure p{
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  transform: translateY(100px);
+  opacity: 0;
+
+}
+
+.mainVisual .mainSlider figure a{
+  display: inline-block;
+  padding: 5px 20px 8px 20px;
+  background: rgb(243, 125, 145);
+  border-radius: 3px;
+  transform: translateY(100px);
+  opacity: 0;
+
+}
+
+.mainVisual .mainSlider figure.on h2{
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.mainVisual .mainSlider figure.on p{
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.5s 0.5s;
+}
+
+.mainVisual .mainSlider figure.on a{
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.5s 1s;
+}
+
+.slick-dots{
+  position: absolute;
+  inset: auto auto 100px 50%;
+  transform: translateX(-50%);
+}
+
+.slick-dots li{
+  display: inline-block;
+  margin: 0px 2px;
+}
+
+.slick-dots li button{
+  border: none;
+  outline: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.slick-dots li.slick-active button{
+  background: rgb(243, 125, 145);
+  color: #fff;
+  transition: 1s;
+}
+
+.mainVisual{
+  position: relative;
+}
+
+.mainVisual .arrows i{
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.mainVisual .arrows i.on{
+  color: rgb(243, 125, 145,0.5);
+}
+
+.mainVisual .arrows i:nth-child(1){
+  margin: 0 0 0 -700px;
+}
+.mainVisual .arrows i:nth-child(2){
+  margin: 0 0 0 700px;
+}
+
+.num{
+  position: absolute;
+  inset: 50px auto auto 50%;
+  margin: 0 0 0 600px;
+  transform: translateX(-100%);
+  color: white;
+  font-size: 31px;
+}
+
+.mainContent01 {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.mainContent01 h2{
+  margin-bottom: 10px;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 1em;
+}
+
+.mainContent01 p{
+  margin-bottom: 30px;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+}
+
+.mainContent01 .container{
+  gap: 30px;
+}
+.mainContent01 figure{
+  flex: 1;
+}
+
+.mainContent01 figure:hover img{
+  transform: scale(1.3);
+}
+
+.mainContent01 figure img {
+  transition: 1s;
+}
+
+.mainContent01 figure .box{
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+
+.mainContent01 figure strong{
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.mainContent01 figure a{
+  display: inline-block;
+  padding: 6px 15px 8px 15px;
+  font-size: 15px;
+  border: 1px solid rgb(243, 125, 145);;
+}
+
+.mainContent01 figure a:hover{
+  color: #fff;
+  background: rgb(243, 125, 145);
+}
+
+.mainContent02 {
+  padding: 100px 0;
+  text-align: center;
+  background: rgb(255, 231, 235);
+}
+
+.mainContent02 h2{
+  margin-bottom: 10px;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 1em;
+}
+
+.mainContent02 p{
+  margin-bottom: 30px;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+}
+
+.mainContent02 .container{
+  gap: 30px;
+}
+.mainContent02 figure{
+  flex: 1;
+}
+
+.mainContent02 figure:hover img{
+  transform: scale(1.3);
+}
+
+.mainContent02 figure img {
+  transition: 0.5s
+}
+
+.mainContent02 figure .box{
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: 0.7s 0.5s;
+}
+
+.mainContent02 figure:hover .box{
+  border-radius: 50%;
+}
+
+.mainContent02 figure strong{
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.mainContent02 figure a{
+  display: inline-block;
+  padding: 6px 15px 8px 15px;
+  font-size: 15px;
+  border: 1px solid rgb(243, 125, 145);;
+}
+
+.mainContent02 figure a:hover{
+  color: #fff;
+  background: rgb(243, 125, 145);
+}
+
+.fixedBg{
+  padding: 100px 0;
+  text-align: center;
+  background: url(../img/mainvisual03.jpg) no-repeat fixed center center/cover;
+  filter: grayscale(1);
+  color: #fff;
+}
+
+.fixedBg h2{
+  margin-bottom: 10px;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 1em;
+}
+
+.fixedBg p{
+  margin-bottom: 30px;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+}
+
+.fixedBg i{
+  padding: 10px;
+  border-radius: 50%;
+  background: #333;
+  vertical-align: middle;
+}
+
+.mapAndIframe{
+  padding: 100px 0;
+}
+
+.mapAndIframe .container{
+  gap: 70px;
+}
+
+.mapAndIframe .container>div{
+  flex: 1;
+}
+
+/*case로 iframe과 map을 싸주고 포지션 기준이 되지 않으면
+높이가 56.25%가 먹히지 않는다 */
+.mapAndIframe .container .case{
+  position: relative;
+  padding-bottom: 56.25%;
+}
+.mapAndIframe iframe{
+  position: absolute;
+  inset: 0 0 0 0;
+}
+
+.right .root_daum_roughmap{
+  position: absolute;
+  inset: 0 0 0 0;
+  width: 100%;
+}
+
+.right .root_daum_roughmap .wrap_map{
+  height: 100%;
+}
+
+.ytb{
+  padding: 100px 0;
+  text-align: center;
+  color: #fff;
+  filter: grayscale(1);
+}
+
+.ytb h2{
+  margin-bottom: 10px;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 1em;
+}
+
+.ytb p{
+  margin-bottom: 30px;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+}
+
+.ytb i{
+  padding: 10px;
+  border-radius: 50%;
+  background: #333;
+  vertical-align: middle;
+}
+
+.scrollMe {
+  padding: 100px 0;
+}
+
+.scrollMe .container{
+  gap: 70px;
+}
+
+.scrollMe .container>figure{
+  flex: 1;
+}
+

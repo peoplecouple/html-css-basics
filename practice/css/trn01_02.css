@@ -1,0 +1,126 @@
+.Wrap {}
+
+:root {
+  --mc: #dc3545;
+  --gc: #dddddd;
+  --wc: #f8f9fa;
+  --dc: #000;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  font-size: 0.8rem;
+}
+
+.top_banner {
+  border-top: 2px solid var(--mc);
+  border-bottom: 1px solid var(--gc);
+  font-size: 0.65rem;
+  line-height: 1.5rem;
+}
+
+.top_banner .container {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: flex-end;
+
+}
+
+.top_banner .container li {
+  padding: 0 0.5rem;
+  border-right: 1px solid var(--gc);
+}
+
+.header {
+  line-height: 5rem;
+}
+
+.header .container {
+  display: flex;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.header .container nav {
+  margin: 0 0 0 auto;
+}
+
+.header .container nav>ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.header .container ul>a {
+  display: block;
+  font-size: 0.85rem;
+}
+
+.header nav>ul>li {
+  position: relative;
+}
+
+.header nav>ul>li~li::before {
+  content: "";
+  width: 1px;
+  height: 0.6rem;
+  background: var(--gc);
+  position: absolute;
+  inset: 50% auto auto -1rem;
+  transform: translateY(-50%);
+}
+
+.header i {
+  font-size: 1.25rem;
+  padding: 0.25rem;
+  background: var(--gc);
+  border-radius: 3px;
+  vertical-align: middle;
+  margin: 0 0 0 1rem;
+}
+
+.header .container img {
+  width: 300px;
+}
+
+.main_visual .main_slider img {
+  width: 100%;
+}
+
+.main_visual {
+  position: relative;
+}
+
+.main_visual .slogan {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  color: var(--wc);
+  text-align: right;
+  width: 1200px;
+  text-shadow: 0 0 2px var(--dc);
+}
+
+.main_visual .slogan h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 2rem 0;
+}
+
+.main_visual .slogan h2::after {
+  content: "";
+  width: 5rem;
+  height: 2px;
+  background-color: var(--wc);
+  display: block;
+  margin: 1rem 0 0 auto;
+}
+
+.main_visual .slogan p {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.4;
+}

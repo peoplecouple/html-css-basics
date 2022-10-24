@@ -1,0 +1,150 @@
+.slider figure{
+  height: 600px;
+}
+
+.slider .itm01{
+  background: url(../img/mainvisual01.jpg) no-repeat center top/cover;
+}
+
+.slider .itm02{
+  background: url(../img/mainvisual02.jpg) no-repeat center center/cover;
+}
+
+.slider .itm03{
+  background: url(../img/mainvisual03.jpg) no-repeat center center/cover;
+}
+
+.slider{
+  position: relative;
+}
+
+.slider .slick-dots{
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.slider .slick-dots li::after{
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #f00;
+}
+
+.slider .slick-dots li{
+  display: inline-block;
+  margin: 0 2px;
+  width: 60px;
+  height: 3px;
+  background: #333;
+}
+
+.slider .slick-dots li.slick-active::after{
+  width: 100%;
+  transition: 2s;
+}
+
+.slider .slick-dots button{
+  display: none;
+}
+
+.slider .slick-arrow{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  font-size: 0;
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  border: none;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  opacity: 0.3;
+}
+
+.slider .slick-arrow:hover{
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.slider .slick-prev{
+  margin: 0 0 0 -700px;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.slider .slick-next{
+  margin: 0 0 0 700px;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.main{
+  position: relative;
+}
+
+.main .slogan{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+}
+
+.main .slogan h2{
+  font-size: 55px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+
+
+.main .slogan p{
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.main .wheel{
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 35px;
+  border: 3px solid #fff;
+  border-radius: 14px;
+  font-size: 0;
+}
+
+.main .wheel span{
+  position: absolute;
+  width: 2px;
+  height: 6px;
+  background: #fff;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: wheel 1s infinite;
+}
+
+@keyframes wheel{
+  to{
+    top: 10px;
+  }
+}
+
+.slider02 {
+  display: flex;
+  width: 1200px;
+  margin: 100px auto;
+}
+
+.slider03 {
+  display: flex;
+  width: 1200px;
+  margin: 100px auto;
+}

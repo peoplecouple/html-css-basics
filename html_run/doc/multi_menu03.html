@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>다단메뉴 03 - 반응형</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/basic01.css">
+  <style>
+    .header {
+      line-height: 100px;
+    }
+
+    .header .container {
+      display: flex;
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header .gnb {
+      margin: 0 0 0 auto;
+    }
+
+    .header .gnb>ul {
+      display: flex;
+    }
+
+    .header .gnb>ul>li {
+      position: relative;
+
+    }
+
+    .header .gnb>ul>li a {
+      display: block;
+      /*a태그 모두 box안에서 손가락모양이 유지*/
+      padding: 0 25px;
+      /*main menu사이 갭에서도 손가락모양이 유지*/
+    }
+
+    .header .gnb>ul ul {
+      display: none;
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      width: 150px;
+      line-height: 40px;
+      text-align: center;
+      background: lavender;
+    }
+
+    .header .gnb>ul>li:hover ul {
+      display: block;
+
+    }
+
+    .mbtn {
+      display: none;
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      font-size: 30px;
+      background: #f7f7f7;
+      padding: 5px;
+      line-height: 1;
+      /*line-height를 상속받고있어서 재설정해줌*/
+    }
+
+    @media (max-width:768px) {
+
+      /*768px = 아이폰 화면 크기*/
+      .header {
+        line-height: 100px;
+      }
+
+      .header .container {
+        display: flex;
+        width: auto;
+        /* margin: 0 auto;  width: auto;라서 꽉차서 margin: 0 auto를 주는 의미가 없다.*/
+      }
+
+      .header .gnb {
+        /*햄버거 누르면 나오게*/
+        position: fixed;
+        /*띄어놔서 스크롤바가 사라짐*/
+        top: 0;
+        left: -100%;
+        /*왼쪽으로 안보이게 옮김*/
+        background: #fff;
+        margin: 0 0 0 auto;
+        z-index: 999;
+        width: calc(100% - 90px);
+        height: 100vh;
+        /*얘가 0이면 자식으로 있는 ul의 z-index가 그 값을 넘길 수 없으므로 다단 메뉴가 나오지 않는다.*/
+        transition: 1s;
+      }
+
+      .header .gnb.on {
+        left: 0;
+      }
+
+      .header .gnb>ul {
+        display: flex;
+        flex-direction: column;
+        line-height: 40px;
+      }
+
+      .header .gnb>ul>li {
+        position: relative;
+
+      }
+
+      .header .gnb>ul>li a {
+        display: block;
+        /*a태그 모두 box안에서 손가락모양이 유지*/
+        padding: 0 25px;
+        /*main menu사이 갭에서도 손가락모양이 유지*/
+      }
+
+      .header .gnb>ul ul {
+        display: none;
+        position: static;
+        top: 100px;
+        left: 50%;
+        transform: translateX(0);
+        z-index: 999;
+        width: auto;
+        line-height: 40px;
+        background: lavender;
+      }
+
+      .header .gnb>ul>li:hover ul {
+        display: none;
+      }
+
+      .mbtn {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="Wrap">
+    <header class="header">
+      <div class="container">
+        <h1>
+          <a href="#!">
+            <img src="../img/logo.png" alt="">
+          </a>
+          <!-- <a href="#">link</a> 누르면 이동을 하지 않는다.-->
+        </h1>
+        <nav class="gnb">
+          <!--global navigation bar-->
+          <ul>
+            <li>
+              <a href="">MENU01</a>
+              <ul class>
+                <li><a href="">smenu01</a></li>
+                <li><a href="">smenu02</a></li>
+                <li><a href="">smenu03</a></li>
+                <li><a href="">smenu04</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">MENU02</a>
+              <ul>
+                <li><a href="">smenu01</a></li>
+                <li><a href="">smenu02</a></li>
+                <li><a href="">smenu03</a></li>
+                <li><a href="">smenu04</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">MENU03</a>
+              <ul>
+                <li><a href="">smenu01</a></li>
+                <li><a href="">smenu02</a></li>
+                <li><a href="">smenu03</a></li>
+                <li><a href="">smenu04</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">MENU04</a>
+              <ul>
+                <li><a href="">smenu01</a></li>
+                <li><a href="">smenu02</a></li>
+                <li><a href="">smenu03</a></li>
+                <li><a href="">smenu04</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">MENU05</a>
+              <ul>
+                <li><a href="">smenu01</a></li>
+                <li><a href="">smenu02</a></li>
+                <li><a href="">smenu03</a></li>
+                <li><a href="">smenu04</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">MENU06</a>
+              <ul>
+                <li><a href="">smenu01</a></li>
+                <li><a href="">smenu02</a></li>
+                <li><a href="">smenu03</a></li>
+                <li><a href="">smenu04</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="mbtn">
+          <i class="xi-bars"></i>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main_visual">
+        <!-- 슬라이드 가정 -->
+      </div>
+    </main>
+    <footer class="footer">
+      &copy; basic template. <a href="#!">link</a>
+      <!-- <a href="#">link</a> 누르면 화면의 위로 올라간다. 
+      javascript에서는 이벤트가 사라져서 조심해야함
+      시안짤 때 a태그 href로 #! 하면 클릭해도 위로 올라가지 않아서 사용하면 됨.     
+      -->
+
+      <!-- 
+      ===경로===
+        / => root으로 가라. live server가 off일 경우 D드라이버로 가고 보통 웹에서는 ~.co.kr 로 감
+       ./ => 내 형제를 찾아라. 생략가능
+      ../ => 내 상위 폴더로 가라.
+       -->
+    </footer>
+  </div>
+
+  <!-- 문제점! 컴퓨터 크기 화면의 메뉴에도 아래가 적용된다!  -->
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script>
+    $(function () {
+
+      $('.gnb>ul>li>a').on('click', function (e) {
+        // if ($(window).width < 769) 이건 컴터 화면이 다르면 이상하니 아래처럼
+        if ($('.gnb').hasClass('on')) { //gnb 클래스에 on이 붙으면이라는 조건문으로~
+          e.preventDefault();
+          // $('.gnb>ul>li>a').next().show(); 이렇게 누르면 아래 a 다 나옴
+          // $('.gnb>ul>li>a').next().hide();/*이전에 누른거 없애고 나오게 한다*/
+          // $(this).parent().siblings().children('ul').hide();/*내 부모의 형제들의 자식 ul를 없애는 방법으로도 이전에 누른거 없앨 수 있다. 부드럽게 안없어진다*/ 
+          // $(this).parent().siblings().find('ul').hide(); find로도 가능하다
+          // $(this).next().show(); /*이전에 누른건 안없어진다*/ 이건 부드럽게 안나옴
+
+          // 다른걸 눌러야 없어진다
+          // $(this).next().slideDown(); 
+          // $(this).parent().siblings().children('ul').slideUp();
+
+          // 같은걸 누르면 사라짐
+          // $(this).next().slideToggle();
+
+          //stop()을 누르면 펼쳐지기전에 닫을 수 있음. toggle로 열고닫고 대채할 수도 있음
+          $(this).next().stop().slideToggle();
+          $(this).parent().siblings().children('ul').stop().slideUp();
+        }
+      });
+      // 윈도우의 사이즈가 달라지면 gnb에 on class가 떨어지고 ul의 스타일을 없앰
+      $(window).on('resize', function () {
+        $('.gnb').removeClass('on');
+        $('.gnb>ul ul').removeAttr('style');
+      })
+
+      $('.mbtn').on('click', function () {
+        //  $('.gnb').toggle(); //부드럽게 안나옴 .gnb를 화면밖 왼쪽으로 보내면 안보인다.
+        $('.gnb').toggleClass('on') /*클래스를 붙혀서 css에서 애니매이션을 짠다.*/
+        $('.gnb>ul>li>a').next().stop().slideUp(); /*메뉴 닫으면 이전에 열려있던 슬라이드 다 닫힘*/
+      })
+
+    })
+  </script>
+</body>
+
+</html>

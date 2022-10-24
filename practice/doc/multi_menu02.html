@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>다단메뉴 02 애니메이션 연습</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .main_visual {
+      position: relative;
+      height: 500px;
+      background: #333;
+    }
+
+    /* 여기서 부터 다단메뉴 시작 */
+    #header {
+      line-height: 100px;
+      background: #ddd
+    }
+
+    .container {
+      display: flex;
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    .container nav {
+      margin: 0 0 0 auto;
+      text-align: center;
+    }
+
+    nav .m_ul {
+      display: flex;
+    }
+
+    nav .m_ul .m_li {
+      position: relative;
+    }
+
+    nav .m_ul .m_li:hover .s_ul {
+      display: block;
+
+    }
+
+    nav .m_ul .m_li>a {
+      display: block;
+      padding: 0 40px;
+    }
+
+    nav .s_ul {
+      position: absolute;
+      inset: 120px auto auto 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      width: 200px;
+      line-height: 40px;
+      background: #fff;
+      border: 3px solid #369;
+
+    }
+
+    nav .m_li:hover .s_ul {
+      inset: 90px auto auto 50%;
+      opacity: 1;
+      visibility: visible;
+      transition: 0.5s;
+    }
+
+    nav .s_ul .s_li {
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header id="header">
+      <div class="container">
+        <h1>LOGO</h1>
+        <nav class="menubar">
+          <ul class="m_ul">
+            <li class="m_li">
+              <a href="">menu01
+                <ul class="s_ul">
+                  <li class="s_li"><a href="">smenu01</a></li>
+                  <li class="s_li"><a href="">smenu02</a></li>
+                  <li class="s_li"><a href="">smenu03</a></li>
+                  <li class="s_li"><a href="">smenu04</a></li>
+                  <li class="s_li"><a href="">smenu05</a></li>
+                </ul>
+              </a>
+            </li>
+            <li class="m_li">
+              <a href="">menu02
+                <ul class="s_ul">
+                  <li class="s_li"><a href="">smenu01</a></li>
+                  <li class="s_li"><a href="">smenu02</a></li>
+                  <li class="s_li"><a href="">smenu03</a></li>
+                  <li class="s_li"><a href="">smenu04</a></li>
+                  <li class="s_li"><a href="">smenu05</a></li>
+                </ul>
+              </a>
+            </li>
+            <li class="m_li">
+              <a href="">menu03
+                <ul class="s_ul">
+                  <li class="s_li"><a href="">smenu01</a></li>
+                  <li class="s_li"><a href="">smenu02</a></li>
+                  <li class="s_li"><a href="">smenu03</a></li>
+                  <li class="s_li"><a href="">smenu04</a></li>
+                  <li class="s_li"><a href="">smenu05</a></li>
+                </ul>
+              </a>
+            </li>
+            <li class="m_li">
+              <a href="">menu04
+                <ul class="s_ul">
+                  <li class="s_li"><a href="">smenu01</a></li>
+                  <li class="s_li"><a href="">smenu02</a></li>
+                  <li class="s_li"><a href="">smenu03</a></li>
+                  <li class="s_li"><a href="">smenu04</a></li>
+                  <li class="s_li"><a href="">smenu05</a></li>
+                </ul>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="main_visual"></div>
+    </main>
+
+    <footer id="footer">
+      &copy; bae
+    </footer>
+  </div>
+
+</body>
+
+</html>

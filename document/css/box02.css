@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  /*padding, border을 주더라도 박스가 늘어나지 않는다.*/
+}
+
+.box {
+  margin: 30px auto;
+  width: 600px;
+  border: 1px solid lightgrey;
+  /*border를 주면 박스가 늘어난다.*/
+}
+
+.box01 {
+  margin: 40px auto;
+  background: lemonchiffon;
+}
+
+.box02 {
+  padding: 30px;
+  /*padding을 주면 박스가 늘어난다.*/
+  background: lightcyan;
+}
+
+.box03 {
+  display: inline;
+  /*display의 속성을 바꿔서 block<->inline 형의 태그로 변경할 수 있다.*/
+  margin: 100px auto;
+  padding: 100px 30px;
+  /*box속성의 div가 아니라 inline속성의 strong이라면 padding 좌우가 먹히지 않아 위치는 변하지 않지만 화면상에서는 좌우 패딩이 있는거 처럼 보임*/
+}
+
+/*
+===margin의 성질===
+margin은 아래 위로 겹친다. 
+큰 사이즈의 margin이 적용된다. 
+부모자식 태그간의 margin도 겹친다.
+그러므로 margin-bottom으로 많이 띄운다. 
+*/

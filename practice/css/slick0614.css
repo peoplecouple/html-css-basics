@@ -1,0 +1,134 @@
+
+.slide01{
+  position: relative;
+  padding: 100px 0;
+}
+
+.slide01 figure{
+  padding: 0 30px;
+}
+
+.slide01 .slick-dots{
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slide01 .slick-dots li{
+  display: inline-block;
+  margin: 0 15px;
+  width: 20px;
+  height: 20px;
+  background: #ddd;
+}
+
+.slide01 .slick-dots li.slick-active{
+  background: #369;
+}
+
+.slide01 .slick-dots button{
+  display: none;
+}
+
+.slide01 .arrows i{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  padding: 20px 30px;
+  background: rgba(1, 1, 1, 0.3);
+  color: #fff;
+}
+
+.slide01 .arrows i:nth-child(1){
+  margin: 0 0 0 -650px;
+}
+
+.slide01 .arrows i:nth-child(2){
+  margin: 0 0 0 650px;
+}
+
+.slide01 .box{
+  position: absolute;
+  top: 300px;
+  left: 400px;
+  width: 400px;
+  height: 500px;
+  border: 1px solid #333;
+  background: #fff;
+}
+
+.slide01 .box .num{
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform:  translateX(-50%);
+  font-size: 31px;
+}
+
+.slide01 .box .content>li{
+  display: none;
+}
+
+.slide01 .box .content>li.on{
+  display: block;
+}
+
+.slide02{
+  padding: 100px 0;
+  background: rgb(239, 202, 208);
+}
+
+.slide02 .container{
+  position: relative;
+  display: flex;
+  width: calc((100% - 1200px) / 2 + 1200px);
+  margin: 0 0 0 auto;
+}
+
+.slide02 .left{
+  width: 30%;
+}
+
+.slide02 .right{
+  width: 70%;
+  margin: auto 0 0 0;
+}
+
+.slide02 .right figure{
+  margin: 0 20px 0 0;
+}
+
+.slide02 .container .arrows i{
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  font-size: 30px;
+  padding: 15px;
+  background: #fff;
+  color: #369;
+  border: 1px solid #369;
+}
+
+.slide02 .container .arrows .xi-arrow-right{
+  margin: 0 0 0 70px;
+}
+
+.slide02 .container .slogan{
+  position: absolute;
+  top: 0px;
+  left: 30%;
+  color: #369;
+}
+.slide02 .container .slogan h2{
+ font-size: 41px;
+ font-weight: 700;
+ margin-bottom: 20px;
+}
+.slide02 .container .slogan p{
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: 20px;
+ }

@@ -1,0 +1,34 @@
+.basic01 {
+  padding: 100px 0;
+  background: #f7f7f7;
+  text-align: center;
+  /*box를 가운데-> margin사용, text를 가운데->text-align*/
+}
+
+.basic01 h2 {
+  font-size: 21px;
+  font-weight: bolder;
+  margin: 0 0 20px 0;
+}
+
+.basic01 p {
+  font-size: 15px;
+  margin: 0 0 30px 0;
+}
+
+.basic01 .container {
+  display: flex;
+  gap: 30px;
+  /*박스 사이를 띄운다, 익스플로어에서는 안먹힘*/
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.basic01 .container img {
+  width: 100%;
+}
+
+.basic01 figure {
+  flex: 1;
+  /*1칸씩 가져라는 의미, 동일한 공간(가로)을 차지*/
+}

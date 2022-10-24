@@ -1,0 +1,150 @@
+img{
+  max-width: 100%;
+}
+
+.main{
+  position: relative;
+}
+
+.visual_slider figure{ /*itm01에 높이를 주면 버튼길이 포함에서 600px로 잡혀버림*/
+  height: 600px;
+}
+
+/* 배경으로 이미지를 깔면 반응형 시 사이즈가 줄어들지 않음 */
+.visual_slider .itm01{
+  background: url(../img/mainvisual01.jpg) no-repeat center top/cover;
+}
+.visual_slider .itm02{
+  background: url(../img/mainvisual02.jpg) no-repeat center center/cover;
+}
+.visual_slider .itm03{
+  background: url(../img/mainvisual03.jpg) no-repeat center center/cover;
+}
+
+.main .slogan{
+  position :absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 1200px;
+  color : #fff;
+  text-shadow: 0 0 3px #000;
+}
+
+.main .slogan h2{
+  font-size: 51px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.main .slogan p{
+  font-size: 21px;
+  font-weight: 300;
+  margin: 0 0 30px 0;
+}
+
+.main .slick-dots{
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/*왜 gap으로는 안띄워지나요 flex와 grid때문에 안먹힌다.*/
+/* 왜 flex로는 가로가 안되나요 js의 기본설정이 block이고 우선권이 있어서 flex를 덮는다.*/
+.main .slick-dots li{
+  display: inline-block; 
+  width: 100px;
+  height: 6px;
+  background: #333;
+  margin: 0 2px;
+}
+
+/*버튼 게이지*/
+.main .slick-dots li::after{
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #f00;
+}
+
+.main .slick-dots li.slick-active::after{
+  width: 100%;
+  transition: 2s;
+}
+
+.main .slick-dots li button{
+  display: none; /*버튼 지운거*/
+}
+
+.main .slick-arrow{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999; 
+/* 원래 여기  translate(-50%, -50%)가 있었는데
+뒤에 나오는 rotate가 덮어버리므로 적용되게 하려면
+아래 함께 써주면 됨*/
+  font-size: 0;
+  border: none;
+  background: transparent;
+  border-top: 2px solid #fff;
+  border-left: 2px solid#fff;
+  width: 100px;
+  height: 100px;
+  opacity: 0.3;
+}
+
+.main .slick-arrow:hover{
+  opacity: 1;
+  transition: 0.3s;
+}
+
+/* 화살표 위치를 
+ 1. margin으로 잡아줌, 단점=반응형에서 사이즈 다시 맞춰줘야함
+ 2. left right값으로 잡아줌
+*/
+.main .slick-prev{
+  /* left: 100px; */
+  margin: 0 0 0 -800px;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.main .slick-next{
+  /* left: auto;
+  right: 100px; */
+  /* right: 100px; .slick-arrow 요기에 left 50%먹혀있으니 left값을 새로 설정해야함  */
+  margin: 0 0 0 800px;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.main .wheel{
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 30px;
+  height: 55px;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  font-size: 0;
+}
+
+.main .wheel span{
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 10px;
+  background: #fff;
+  border-radius: 1px;
+  animation: wheel 0.5s infinite;
+}
+
+@keyframes wheel{
+  to {
+    top:15px;
+  }
+}

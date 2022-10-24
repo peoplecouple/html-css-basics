@@ -1,0 +1,34 @@
+h1 {
+  line-height: 100px;
+  /*줄 간격(글을 줄의 가운데에 오게함)*/
+  background: lightblue;
+}
+
+nav {
+  line-height: 100px;
+  background: lavenderblush;
+}
+
+
+.next {
+  line-height: 100px;
+}
+
+.next .container {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.next nav {
+  margin: 0 0 0 auto;
+}
+
+.next nav ul {
+  display: flex;
+  gap: 30px;
+}
+
+.next .icon {
+  margin: 0 0 0 30px;
+}

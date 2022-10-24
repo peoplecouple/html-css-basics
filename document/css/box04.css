@@ -1,0 +1,96 @@
+h1 {
+  line-height: 100px;
+  /*줄 간격(글을 줄의 가운데에 오게함)*/
+  background: lightblue;
+}
+
+h6 {
+  text-align: center;
+  line-height: 50px;
+}
+
+nav {
+  line-height: 100px;
+  background: lavenderblush;
+}
+
+.right {
+  background: lightgoldenrodyellow;
+  line-height: 100px;
+}
+
+.header01 {
+  display: flex;
+  /*width auto 사라짐, 내용물에 맞게 줄어듬*/
+}
+
+.header02 {
+  display: flex;
+  justify-content: center;
+}
+
+.header03 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header04 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header05 {
+  display: flex;
+}
+
+.header05 nav {
+  margin: 0 0 0 auto;
+  /*왼쪽마진을 다 줌*/
+}
+
+.basic {
+  line-height: 100px;
+}
+
+.basic .container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+
+
+.basic nav {
+  margin: 0 0 0 auto;
+}
+
+.basic nav ul {
+  display: flex;
+  gap: 30px
+}
+
+.basic .icon {
+  margin: 0 0 0 30px;
+}
+
+.next {
+  line-height: 100px;
+}
+
+.next .container {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.next nav {
+  margin: 0 0 0 auto;
+}
+
+.next nav ul {
+  display: flex;
+  gap: 30px;
+}
+
+.next .icon {
+  margin: 0 0 0 30px;
+}

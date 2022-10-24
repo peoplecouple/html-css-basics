@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>movie01 연습</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/jquery.mb.YTPlayer.min.css">
+  <style>
+    .fix_bg {
+      padding: 200px 0;
+      background: url(../img/mainvisual03.jpg) no-repeat fixed center center/cover;
+      text-align: center;
+      color: #fff;
+    }
+
+    .fix_bg h2 {
+      font-size: 51px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .fix_bg p {
+      font-size: 25px;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+
+    .movie01 {
+      padding: 100px 0;
+    }
+
+    .movie01 .container {
+      display: flex;
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    .movie01 .container video {
+      max-width: 100%;
+    }
+
+    .movie01 .container>div {
+      flex: 1;
+    }
+
+    .movie01 .container .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 20px;
+    }
+
+    .movie01 .container .right i {
+      font-size: 30px;
+      padding: 5px;
+      background: #f7f7f7;
+      border-radius: 3px;
+    }
+
+    .movie01 .right i:hover {
+      cursor: pointer;
+    }
+
+    .movie02 {
+      padding: 100px 0;
+      color: #fff;
+      text-shadow: 0 0 3px #000;
+      text-align: center;
+    }
+
+    .movie02 i {
+      font-size: 30px;
+    }
+
+    .movie02 i:hover {
+      cursor: pointer;
+    }
+
+    .movie02 #v02 h2 {
+      font-size: 55px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .movie02 #v02 p {
+      font-size: 25px;
+      font-weight: 300;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="fix_bg">
+    <h2>배경 고정하자</h2>
+    <p>YTPlayer pluggin 사용!</p>
+  </section>
+
+  <section class="movie01">
+    <div class="container">
+      <div class="left">
+        <video src="../img/earth.mp4" class="v01"></video>
+      </div>
+      <div class="right">
+        <h2>MP4 파일 재생</h2>
+        <p>지구 동영상</p>
+        <div class="control">
+          <i class="xi-pause"></i>
+          <i class="xi-play"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="movie02">
+    <div id="v02" class="player">
+      <h2>나는야 재롱이</h2>
+      <p>재롱잔치 구독 좋아요 ㄱ ㄱ !</p>
+      <div class="control">
+        <i class="xi-pause"></i>
+        <i class="xi-play"></i>
+        <i class="xi-volume"></i>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/jquery.mb.YTPlayer.min.js"></script>
+  <script>
+    $(function () {
+      $('.movie01 .right i:nth-child(1)').on('click', function () {
+        $('.v01').trigger('pause');
+      })
+      $('.movie01 .right i:nth-child(2)').on('click', function () {
+        $('.v01').trigger('play');
+      })
+
+      $('#v02').YTPlayer({
+        videoURL: 'https://youtu.be/qbddmcLwjMQ',
+        containment: '.movie02',
+        autoPlay: true,
+        mute: true,
+        startAt: 0,
+        opacity: 1,
+        showControls: false
+      })
+
+      $('.movie02 i:nth-child(1)').on('click', function () {
+        $('#v02').YTPPause();
+      })
+      $('.movie02 i:nth-child(2)').on('click', function () {
+        $('#v02').YTPPlay();
+      })
+      $('.movie02 i:nth-child(2)').on('click', function () {
+        $('#v02').YTPUnmute();
+      })
+
+    })
+
+  </script>
+</body>
+
+</html>

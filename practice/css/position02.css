@@ -1,0 +1,63 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: -500px;
+  background: lightcoral;
+  height: 100vh;
+  width: 500px;
+  transition: 0.5s;
+}
+
+nav.oo {
+  left: 0;
+}
+
+.mopen {
+  height: 50px;
+  width: 50px;
+  background: lightgrey;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+}
+
+.mopen span {
+  position: absolute;
+  background: rgb(51, 51, 51);
+  left: 5px;
+  right: 5px;
+  height: 5px;
+  transition: 0.5s;
+}
+
+.mopen span:nth-child(1) {
+  top: 5px;
+}
+
+.mopen.oo span:nth-child(1) {
+  opacity: 0;
+}
+
+.mopen span:nth-child(2) {
+  top: 22px;
+}
+
+.mopen.oo span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.mopen span:nth-child(3) {
+  top: 22px;
+}
+
+.mopen.oo span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.mopen span:nth-child(4) {
+  bottom: 5px;
+}
+
+.mopen.oo span:nth-child(4) {
+  opacity: 0;
+}

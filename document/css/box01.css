@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  /*margin : 0 0 0 0 과 같다. (상 우 하 좌)*/
+}
+
+h1 {
+  color: lightcoral;
+}
+
+.box00 {
+  background: lightblue;
+  color: #fff;
+  width: 1200px; /*가장 잘 쓰이는 크기*/
+  margin: 0 auto;
+}
+
+.box01 {
+  width: 50%;
+  background: beige;
+}
+
+.box02 {
+  margin-left: 100px;
+  width: 100%;
+  background: lavender;
+}
+
+.box03 {
+  margin-left: 100px;
+  background: lightpink;
+}
+
+/*100%(부모에게서 상속받는 값) auto(자연스러운 값, 스크롤 생기지 않는다)*/

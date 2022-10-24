@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 
+탭 만들때는 display none(공간까지 사라짐)으로 했었는데 
+display none block이 slide 깰 경우가 있음
+
+이번엔 position으로 겹치게 할꺼임
+visibility(공간속에 있는 내용물을 숨김, 공간은 존재) -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab 02 - slick사용과 visibility</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/slick.css">
+  <style>
+    img {
+      max-width: 100%;
+    }
+
+    .tab {
+      padding: 100px 0;
+    }
+
+    .container {
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    .tab_menu {
+      display: flex;
+    }
+
+    .tab_menu>li {
+      flex: 1;
+    }
+
+    .tab_menu>li.on a {
+      /*순번이 있는 li에 붙힌다.*/
+      background: lavender;
+    }
+
+    .tab_menu>li>a {
+      display: block;
+      line-height: 40px;
+      padding: 0 15px;
+      background: #f7f7f7;
+    }
+
+    .tab_menu>li~li {
+      border-left: 3px solid #fff;
+    }
+
+    .tab_content {
+      position: relative;
+      height: 400px;
+    }
+
+    .tab_content>li {
+      position: absolute;
+      inset: 0 auto auto 0;
+      visibility: hidden;
+      padding: 10px 0;
+      width: 100%;
+    }
+
+    .tab_content>li.on {
+      visibility: visible;
+    }
+
+    .bbong {
+      padding: 200px 0;
+      background: #333;
+    }
+  </style>
+</head>
+<!-- 
+탭 만들때는 display none(공간까지 사라짐)으로 했었는데 
+display none block이 slide 깰 경우가 있음
+
+이번엔 position으로 겹치게 할꺼임
+visibility(공간속에 있는 내용물을 숨김, 공간은 존재) -->
+
+<body>
+  <section class="tab">
+    <!--볼륨감 줄 용도로 싸줌-->
+    <div class="container">
+      <!--1200에 담겠다-->
+      <ul class="tab_menu">
+        <li><a href="">menu01</a></li>
+        <li><a href="">menu02</a></li>
+        <li><a href="">menu03</a></li>
+      </ul>
+
+      <ul class="tab_content">
+        <li>
+          <div class="product_slider">
+            <figure>
+              <img src="../img/lesedilarona01.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona02.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona03.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona04.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona05.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona06.jpg" alt="">
+            </figure>
+          </div>
+        </li>
+        <li>
+          <div class="product_slider">
+            <figure>
+              <img src="../img/lesedilarona01.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona02.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona03.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona04.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona05.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona06.jpg" alt="">
+            </figure>
+          </div>
+        </li>
+        <li>
+          <div class="product_slider">
+            <figure>
+              <img src="../img/lesedilarona01.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona02.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona03.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona04.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona05.jpg" alt="">
+            </figure>
+            <figure>
+              <img src="../img/lesedilarona06.jpg" alt="">
+            </figure>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bbong">
+    <!-- 슬라이드의 높이가 없어서 이렇게 겹치게 됨 -->
+  </section>
+
+
+
+
+
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/slick.min.js"></script>
+  <script>
+    $(function () {
+      $('.tab_menu>li>a').on('click', function (e) {
+        e.preventDefault();
+        var idx = $(this).parent().index()
+        $(this).parent().addClass('on').siblings().removeClass('on');
+        $('.tab_content>li').eq(idx).addClass('on').siblings().removeClass('on');
+
+        $('.product_slider').slick({
+          slidesToShow: 5,
+        });
+      })
+
+    })
+  </script>
+</body>
+
+</html>

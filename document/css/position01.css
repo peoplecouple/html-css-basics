@@ -1,0 +1,84 @@
+.popup {
+  position: absolute;
+  top: 50%;
+  /*기준인 body의 50%*/
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 350px;
+  background: rgb(245, 204, 210);
+
+  /*자기자신을 변경시키는, 레이아웃을 깨지않는다*/
+  /*자기자신의 사이즈의 50퍼*/
+  /*transform 한번만 쓴다. 두번 쓰면 뒤에가 앞을 덮는다*/
+}
+
+.popup button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+/*
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  이렇게 주면 좌측 상단이 꼭지점으로 맞춰짐
+  이때 
+
+  transform으로 x,y 축을 주면 가운데로 옮길 수 있다.
+*/
+
+/*
+===팝업을 가운데로 배치 공식===
+  position: absolute;
+  top: 50%; 기준인 body의 50%
+  left: 50%;
+  transform: translate(-50%, -50%); 
+===박스를 가운데로===
+  margin : 0 auto;
+*/
+
+/*
+===애니메이션===
+  transition
+  keyframes
+  overflow
+*/
+
+/*
+===도형===
+ border-radius
+ 100px 이면 좌측상단에서 우로 100 하로 100 점찍어 곡선을 만든다.
+ 그러니 50%면 길이의 50%에서 점찍어 곡선을 만들어서 원이 된다. 
+*/
+
+/*
+===주의점===
+ 특별한 경우가 아니면 height 값은 auto다!
+ heigth 가 auto가 아닌경우 - background들어가야 할 때
+                          - 내용물이 떠올라서 높이를 0으로 변할 때
+                          - 슬라이드를 만들 때 
+*/
+
+/*
+ 0빼고 모든 수치는 단위 필수
+ em = 자기가 가진 폰트의 크기의 x배
+ rem = html의 최상위 폰트의 크기의 x배
+ 기본적으로 1rem = 16px
+ 기본적인 글자의 크기 = 16px
+ line-height : 1 => 폰트의 높이의 1배 
+ vertical-align => 부모가 아닌 각각에 먹임
+*/
+
+
+/*
+레이아웃의 전체적인 틀
+ .wrap(전체를 감싸는)으로 전체를 먼저 감싼다.
+ .container(margin 0 auto, width 1200xp안에 차는 경우 .container이라고 한다.)
+ 1. <header></header>
+ 2. <main></main> 또는 안씀(main태그는 explore에서 작동이 안되므로)
+ 3. <footer></footer>
+ 
+*/

@@ -1,0 +1,180 @@
+#header{
+  line-height: 100px;
+  border-bottom: 1px solid #000;
+}
+
+#header .container{
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+#header .gnb>ul{
+  display: flex;
+  /* gap: 40px; gap이 explore에서 안보이는 경우가 있어서 a의 padding으로 띄우자 */
+}
+
+#header .gnb>ul a{
+  display: block;
+  padding: 0 20px;
+}
+
+.main_visual{ /*.num을 위한 기준*/
+  position: relative;
+}
+
+#main{
+  position: relative;
+}
+
+/* 
+높이를 줘야하는 상황
+1. absolute로 띄웠을 때
+2. 배경으로 이미지를 줄 때
+*/
+#main .main_slider figure{ /*.main_slider 에 높이를 주지않고 figure에 줘야함 아님 div div를 거쳐야함*/
+  position: relative; /*슬라이드 내의 글자의 기준*/
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+#main .main_slider .itm01{
+  background-image: url(../img/mainvisual01.jpg);
+}
+
+#main .main_slider .itm02{
+  background-image: url(../img/mainvisual02.jpg);
+}
+
+#main .main_slider .itm03{
+  background-image: url(../img/mainvisual03.jpg);
+}
+
+/*1200px에는 팝업이 가운데가 좋다.*/
+.main_slider figure .inner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+}
+
+.main_slider figure .inner h2{
+  font-size: 55px;
+  font-weight: 700;
+  text-transform: uppercase; /*영문에 한하는 속성*/
+  margin: 0 0 10px 0;
+  transform: translateY(100px); /*부모의 박스는 변경시키지 않고 자신만 바뀜*/
+  opacity: 0;
+}
+
+/*첫번째 슬라이드는 애니메이션 안먹힌다. 클래스가 붙은 후에 슬릭이 만들어지므로*/
+/* #main .main_slider figure.slick-current h2{
+ color: #f00;
+ transition: 2s;
+}  */
+
+/* 이렇게 하고 javascript를 돌리면 첫번째 슬라이드 애니메이션 먹힌다. 슬릭이 만들어 진 후 on이 붙으므로  */
+.main_slider figure.on .inner h2{
+  transform: translateY(0);
+  opacity: 1;
+  transition: 4s;
+}
+
+
+.main_slider figure .inner p{
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0 0 20px 0;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.main_slider figure.on .inner p{
+  transform: translateY(0);
+  opacity: 1;
+  transition: 4s 0.5s;
+}
+
+.main_slider .inner a{
+ display: inline-block;
+  padding: 5px 15px 9px 15px;
+  background: #333;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.main_slider figure.on .inner a{
+  transform: translateY(0);
+  opacity: 1;
+  transition: 4s 1s;
+}
+
+
+/*background를 사용해서 무한대로 123 숫자 돌아가게 만들기*/
+.main_visual .num{
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-100%);
+  width: 100px; 
+  height: 100px; /*이거때문에 숫자가 하나만 보임*/
+  background-image: url(../img/KakaoTalk_20220615_112745164.png);
+  background-position-y: 0px;
+  margin: 0 0 0 600px;
+  transition: 1s;
+}
+
+/*외부에서 만든 도트 (아이콘을 쓸 수 있다) slickGoTo 사용*/
+.main_visual .custom_dots{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  background: #ddd;
+  display: flex;
+}
+
+.main_visual .custom_dots li{
+  flex:1;
+  position: relative;
+}
+
+.main_visual .custom_dots li~li{
+  border-left: 1px solid #fff;
+}
+
+
+
+.main_visual .custom_dots li a{
+  position: relative;
+  display: block;
+  padding: 10px;
+}
+
+.main_visual .custom_dots li::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #f00;
+}
+
+.main_visual .custom_dots li.on::before{
+width: 100%;
+transition: 1s;
+}
+
+.main_visual i{
+  font-size: 30px;
+  vertical-align: middle;
+}
+

@@ -1,0 +1,74 @@
+body {
+  background: rgb(200, 255, 200);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  /*vh = view height*/
+  background: rgb(179, 223, 250);
+  transition: 0.5s;
+  /*부드럽게 나오게*/
+}
+
+/* height: 100%; absolute로 기준이 body가 되었고 body의 100%를 의미 */
+
+nav.oo {
+  /*nav에 class oos이 붙어있을 때*/
+  left: 0;
+}
+
+.mopen {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  background: #ddd;
+}
+
+.mopen span {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  /*양방향으로 줌*/
+  background: rgb(99, 97, 97);
+  height: 3px;
+  transition: 0.5s;
+}
+
+.mopen span:nth-child(1) {
+  top: 5px;
+}
+
+.mopen.oo span:nth-child(1) {
+  opacity: 0;
+  /*display: none; 이건 중간 단계가 없으므로 transition이 안먹힌다.*/
+}
+
+.mopen span:nth-child(2) {
+  top: 14px;
+}
+
+.mopen.oo span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.mopen span:nth-child(3) {
+  top: 14px;
+}
+
+.mopen.oo span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.mopen span:nth-child(4) {
+  bottom: 5px;
+}
+
+.mopen.oo span:nth-child(4) {
+  opacity: 0;
+}

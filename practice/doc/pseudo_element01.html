@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pseudo_element01 연습</title>
+  <link rel="stylesheet" href="../css/reset.css">
+</head>
+<style>
+  section {
+    padding: 100px 0;
+    text-align: center;
+  }
+
+  section:nth-child(even) {
+    background: #ffddde;
+  }
+
+  section h2 {
+    font-size: 31px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.025em;
+  }
+
+  section p {
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: -0.025em;
+  }
+
+  section .container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+  }
+
+  section .container figure {
+    flex: 1;
+  }
+
+  section .container img {
+    width: 100%;
+  }
+
+  .section01 h2::before {
+    content: "\ea16";
+    font-family: xeicon !important;
+    margin: 0 10px 0 0;
+  }
+
+  .section01 h2::after {
+    content: "\ea16";
+    font-family: xeicon !important;
+    margin: 0 0 0 10px;
+  }
+
+  .section01 p::before {
+    content: "";
+    display: inline-block;
+    width: 150px;
+    height: 2px;
+    background: pink;
+    vertical-align: middle;
+    margin: 0 10px 0 0;
+  }
+
+  .section01 p::after {
+    content: "";
+    display: inline-block;
+    width: 150px;
+    height: 2px;
+    background: pink;
+    vertical-align: middle;
+    margin: 0 0 0 10px;
+  }
+
+  .section01 figure {
+    position: relative;
+  }
+
+  .section01 figure::before {
+    content: "\ea10";
+    font-family: xeicon !important;
+    position: absolute;
+    font-size: 70px;
+    top: -20px;
+    left: -20px;
+    color: #e27b8e;
+    transition: 2s cubic-bezier(1, 1, 0, 0);
+  }
+
+  .section01 figure::after {
+    content: "\ea10";
+    font-family: xeicon !important;
+    position: absolute;
+    font-size: 70px;
+    top: -20px;
+    right: -20px;
+    color: #e27b8e;
+    transition: 2s cubic-bezier(1, 1, 0, 0);
+  }
+
+  .section01 figure:hover::before {
+    transform: rotateX(720deg);
+  }
+
+  .section01 figure:hover::after {
+    transform: rotateX(720deg);
+  }
+
+  .section02 p::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: #e27b8e;
+    margin: 30px auto 0 auto;
+  }
+
+  .section02 figure {
+    position: relative;
+  }
+
+  .section02 figure::after {
+    content: attr(about);
+    position: absolute;
+    background: #e27b8e;
+    color: #fff;
+    font-weight: 500;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 20px;
+    border-radius: 40px;
+    transition: 1s;
+  }
+
+  .section02 figure:hover::after {
+    opacity: 0;
+  }
+
+  .section02 .container .box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #d4b9ba;
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .section02 .container .box a {
+    font-size: 30px;
+    color: #e27b8e;
+  }
+
+  .section02 figure:hover .box {
+    width: 30%;
+  }
+
+  .section03 h2::before {
+    content: "\e9fe";
+    font-family: xeicon !important;
+    margin-right: 10px;
+    background: #e27b8e;
+    padding: 10px;
+    border-radius: 50%;
+    color: #ffddde;
+    transition: 1s;
+  }
+
+  .section03 h2::after {
+    content: "\e9fe";
+    font-family: xeicon !important;
+    margin-left: 10px;
+    background: #e27b8e;
+    padding: 10px;
+    border-radius: 50%;
+    color: #ffddde;
+    transition: 1s;
+  }
+
+  .section03 h2:hover::before {
+    background: #ffddde;
+    color: #e27b8e;
+  }
+
+  .section03 h2:hover::after {
+    background: #ffddde;
+    color: #e27b8e;
+  }
+
+  .section03 ul {
+    display: inline-block;
+    /*section에 text-align center가 있으니
+    ul부분이 중간에 오게 하고싶으면 인라인블록으로 바꾸면 간단하게 끝!*/
+  }
+
+  .section03 li {
+    font-size: 31px;
+    text-align: left;
+  }
+
+  .section03 li::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #e27b8e;
+    vertical-align: middle;
+    margin: -10px 10px 0 0;
+  }
+
+  .section03 hr {
+    position: relative;
+    border: none;
+    border-top: 1px dotted #e27b8e;
+    margin-bottom: 40px;
+    overflow: visible;
+  }
+
+  .section03 hr::before {
+    content: "\ea05";
+    font-family: xeicon !important;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #e27b8e;
+  }
+</style>
+
+<body>
+  <section class="section01">
+    <h2>잔망루피 피규어</h2>
+    <p>귀여운 루피 피규어를 단돈 5000원에! 절호의 찬쑤!</p>
+    <div class="container">
+      <figure>
+        <img src="../img/루피6.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="../img/루피6.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="../img/루피6.jpg" alt="">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section02">
+    <h2>잔망루피 피규어</h2>
+    <p>귀여운 루피 피규어를 단돈 5000원에! 절호의 찬쑤!</p>
+    <div class="container">
+      <figure about="OMG루피">
+        <img src="../img/루피3.jpg" alt="">
+        <div class="box">
+          <a href=""><i class="xi-cart-o"></i></a>
+        </div>
+      </figure>
+      <figure about="OMG루피">
+        <img src="../img/루피3.jpg" alt="">
+        <div class="box">
+          <a href=""><i class="xi-cart-o"></i></a>
+        </div>
+      </figure>
+      <figure about="OMG루피">
+        <img src="../img/루피3.jpg" alt="">
+        <div class="box">
+          <a href=""><i class="xi-cart-o"></i></a>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section03">
+    <h2>잔망루피 피규어</h2>
+    <p>귀여운 루피 피규어를 단돈 5000원에! 구매가능한 점포</p>
+    <hr>
+    <ul>
+      <li>상점001</li>
+      <li>상점002</li>
+      <li>상점003</li>
+      <li>상점004</li>
+      <li>상점005</li>
+      <li>상점006</li>
+      <li>상점007</li>
+      <li>상점008</li>
+      <li>상점009</li>
+      <li>상점0010</li>
+    </ul>
+  </section>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/slick.css">
+  <link rel="stylesheet" href="../css/slick01.css">
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/slick.min.js"></script>
+  <!--slick.css꼭 같이 들고와야하며 다운로드 받았을 때 slick.js가져오면 안됨-->
+  <!-- min.js 는 슬릭 밖으로 박스를 2개를 싸서 자식선택자 사용하면 안되며
+       img의 display가 block이 된다. 그래서 align-content center가 안먹힘, 이때는 margin으로 그림을 중앙으로 보내면 된다.
+       슬릭은 clone을 만들어내므로 nth child를 쓰면 안됨 -->
+  <script src="../js/slick01.js"></script>
+  <title>Slick 01</title>
+</head>
+
+<body>
+  <section class="main_visual">
+    <div class="main_slider">
+      <figure class="itm01 itm">
+        <div class="inner">
+          <h3>01.Lorem ipsum dolor sit amet.</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem,<br>
+            facere deleniti nam asperiores sint natus!</p>
+          <a href="">more</a>
+        </div>
+      </figure>
+      <figure class="itm02 itm">
+        <div class="inner">
+          <h3>02.Lorem ipsum dolor sit amet.</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem,<br>
+            facere deleniti nam asperiores sint natus!</p>
+          <a href="">more the more</a>
+        </div>
+      </figure>
+      <figure class="itm03 itm">
+        <div class="inner">
+          <h3>03.Lorem ipsum dolor sit amet.</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem,<br>
+            facere deleniti nam asperiores sint natus!</p>
+          <a href="">more</a>
+        </div>
+      </figure>
+      <!-- background로 img를 깔면 반응형이 되더라도 높이가 유지된다. -->
+    </div>
+    <div class="num">1</div>
+  </section>
+</body>
+
+</html>

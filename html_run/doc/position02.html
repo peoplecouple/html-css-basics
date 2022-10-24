@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .sticky {
+      position: sticky;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      color: #fff;
+      text-align: center;
+      line-height: 100vh;
+    }
+
+    header {
+      background: rgb(255, 118, 118);
+    }
+
+    main {
+      background: rgb(240, 240, 108);
+    }
+
+    footer {
+      background: rgb(97, 224, 224);
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .container figure {
+      flex: 1;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    .container figure:nth-child(2){
+      background: #333;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="sticky">
+    header
+  </header>
+
+  <main class="sticky">
+    main
+  </main>
+  <section class="sticky">
+    <div class="container">
+      <figure>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, maiores. Quasi et ullam in, vel aperiam fugit dicta quos ab explicabo unde dolor tempore vero non magni deserunt totam cum blanditiis, delectus impedit pariatur quis. Quo accusamus consequuntur, optio corrupti voluptates blanditiis autem? Ipsum quae recusandae velit consequatur, veniam impedit labore vel laborum minima vero adipisci odio incidunt totam ipsam id architecto, quidem laudantium hic earum minus quod? Tempore ab, sed distinctio placeat sequi nulla animi tempora et voluptate aspernatur iusto voluptatibus deserunt illum consequuntur cum optio culpa qui sit praesentium cumque debitis dolorem aut sapiente? Nostrum nulla aliquam maiores?
+      </figure>
+      <figure>
+        lorem 
+      </figure>
+    </div>
+  </section>
+
+  <footer class="sticky">
+    footer
+  </footer>
+</body>
+
+</html>

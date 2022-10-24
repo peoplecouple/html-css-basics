@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reset.css">
+  <title>header 연습</title>
+  <style>
+    .Wrap {
+      min-width: 1900px;
+    }
+
+    .main_visual {
+      position: relative;
+      height: 600px;
+      background: lightpink;
+    }
+
+    footer {
+      text-align: center;
+      line-height: 100px;
+      background: rgb(247, 161, 130);
+    }
+
+    footer::after {
+      content: attr(info);
+    }
+
+    #header {
+      line-height: 100px;
+      background: rgb(253, 230, 167);
+    }
+
+    #header .container ul>li>a {
+      display: block;
+    }
+
+    /* section01 */
+    .section01 #header .container {
+      display: flex;
+      width: 1200px;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+
+    .section01 #header .container h1 {
+      width: 200px;
+      /*로고의 사이즈가 크면 px로 줄이자!*/
+    }
+
+    .section01 #header .container nav>ul {
+      display: flex;
+      gap: 40px;
+    }
+
+    /* secton02 */
+    .section02 #header .container {
+      display: flex;
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section02 #header .container h1 {
+      width: 200px;
+      /*로고의 사이즈가 크면 px로 줄이자!*/
+    }
+
+    .section02 #header .container nav {
+      margin: 0 0 0 auto;
+    }
+
+    .section02 #header .container nav>ul {
+      display: flex;
+      gap: 40px;
+    }
+
+    .section02 #header .container .btn {
+      margin: 0 0 0 40px;
+      cursor: pointer;
+    }
+
+    .section02 #header .container .btn i {
+      font-size: 20px;
+      padding: 10px;
+      background: lightpink;
+      border-radius: 5px;
+    }
+
+    /* section03 */
+    .section03 #header .container {
+      display: flex;
+      width: 1200px;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+
+    .section03 #header .container h1 {
+      width: 200px;
+    }
+
+    .section03 #header .container nav>ul {
+      display: flex;
+      gap: 40px;
+    }
+
+    .section03 #header .container .btn {
+      width: 200px;
+      cursor: pointer;
+    }
+
+    .section03 #header .container .btn i {
+      font-size: 20px;
+      padding: 10px;
+      background: lightpink;
+      border-radius: 5px;
+    }
+
+    /* section04 */
+    .section04 #header .container {
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section04 #header .container nav {
+      display: flex;
+    }
+
+    .section04 #header .container nav>* {
+      flex: 1;
+    }
+
+    .section04 #header .container nav img {
+      width: 200px;
+
+    }
+
+    .section04 #header .container nav ul {
+      display: flex;
+      gap: 40px;
+    }
+
+    .section04 #header .container h1 {
+      text-align: center;
+    }
+
+    .section04 #header .container .right {
+      justify-content: flex-end;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="Wrap">
+    <section class="section01">
+      <header id="header">
+        <div class="container">
+          <h1>
+            <a href="/"><img src="../img/mango.png" alt=""></a>
+          </h1>
+          <nav>
+            <ul>
+              <li><a href="">MENU01</a></li>
+              <li><a href="">MENU02</a></li>
+              <li><a href="">MENU03</a></li>
+              <li><a href="">MENU04</a></li>
+              <li><a href="">MENU05</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <div class="main_visual">
+
+        </div>
+      </main>
+      <footer info="header01 - 가로배치">
+        &copy;
+      </footer>
+    </section>
+
+    <section class="section02">
+      <header id="header">
+        <div class="container">
+          <h1>
+            <a href="/"><img src="../img/mango.png" alt=""></a>
+          </h1>
+          <nav>
+            <ul>
+              <li><a href="">MENU01</a></li>
+              <li><a href="">MENU02</a></li>
+              <li><a href="">MENU03</a></li>
+              <li><a href="">MENU04</a></li>
+              <li><a href="">MENU05</a></li>
+            </ul>
+          </nav>
+          <div class="btn">
+            <i class="xi-apps"></i>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="main_visual">
+
+        </div>
+      </main>
+      <footer info="header02 - 아이콘">
+        &copy;
+      </footer>
+    </section>
+
+    <section class="section03">
+      <header id="header">
+        <div class="container">
+          <h1>
+            <a href="/"><img src="../img/mango.png" alt=""></a>
+          </h1>
+          <nav>
+            <ul>
+              <li><a href="">MENU01</a></li>
+              <li><a href="">MENU02</a></li>
+              <li><a href="">MENU03</a></li>
+              <li><a href="">MENU04</a></li>
+              <li><a href="">MENU05</a></li>
+            </ul>
+          </nav>
+          <div class="btn">
+            <i class="xi-apps"></i>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="main_visual">
+
+        </div>
+      </main>
+      <footer info="header03 - nav 중앙 배치">
+        &copy;
+      </footer>
+    </section>
+
+    <section class="section04">
+      <header id="header">
+        <div class="container">
+          <nav>
+            <ul>
+              <li><a href="">MENU01</a></li>
+              <li><a href="">MENU02</a></li>
+            </ul>
+            <h1>
+              <a href="/"><img src="../img/mango.png" alt=""></a>
+            </h1>
+            <ul class="right">
+              <li><a href="">MENU03</a></li>
+              <li><a href="">MENU04</a></li>
+              <li><a href="">MENU05</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <div class="main_visual">
+
+        </div>
+      </main>
+      <footer info="header04 - 로고 중앙 배치">
+        &copy;
+      </footer>
+    </section>
+
+  </div>
+</body>
+
+</html>

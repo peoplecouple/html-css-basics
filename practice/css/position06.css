@@ -1,0 +1,113 @@
+body {
+  overflow-x: hidden;
+}
+
+.header {
+  line-height: 100vh;
+  background: lightskyblue;
+  font-size: 41px;
+  color: aliceblue;
+  text-align: center;
+}
+
+.top_banner {
+  position: relative;
+  background: lightgoldenrodyellow;
+}
+
+.top_banner .container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100px;
+  overflow: hidden;
+  transition: 1s;
+}
+
+.top_banner button {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  margin: 0 0 0 500px;
+  background: lightgoldenrodyellow;
+  line-height: 20px;
+  border: none;
+  outline: none;
+  width: 100px;
+  border-radius: 0 0 5px 5px;
+}
+
+.top_banner button::after {
+  content: 'close';
+}
+
+.top_banner.active .container {
+  height: 0;
+}
+
+.top_banner.active button::after {
+  content: 'open';
+}
+
+.top_banner.active button i {
+  transform: rotate(180deg);
+}
+
+
+.side_banner {
+  position: fixed;
+  background: lightgoldenrodyellow;
+  width: 140px;
+  top: 50%;
+  transform: translateY(-50%);
+  /*50vh는 때때로 화면 중간에서 안보일 수 있음*/
+  right: -120px;
+  transition: 1s;
+}
+
+.side_banner li {
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.side_banner.active {
+  right: 0;
+}
+
+.mySun {
+  position: absolute;
+  top: 200px;
+  right: 200px;
+  color: rgb(255, 51, 0);
+  font-size: 300px;
+  animation: sun_move 6s infinite linear;
+}
+
+@keyframes sun_move {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.myCloud1 {
+  position: absolute;
+  top: 200px;
+  left: -300px;
+  color: white;
+  font-size: 300px;
+  animation: cloud_move1 10s infinite linear;
+}
+
+.myCloud2 {
+  position: absolute;
+  top: 350px;
+  left: 490px;
+  color: white;
+  font-size: 200px;
+  animation: cloud_move1 10s infinite linear;
+}
+
+@keyframes cloud_move1 {
+  to {
+    left: 2000px;
+  }
+}

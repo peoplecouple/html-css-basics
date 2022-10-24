@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hover01</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <style>
+    section {
+      padding: 100px 0;
+      text-align: center;
+      /*--text-align이 center이고 position이 먹히면 경우 쪼그라든다.*/
+    }
+
+    section h2 {
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -.025em;
+      margin: 0 0 10px 0;
+    }
+
+    section p {
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: -.025em;
+      /*한글은 자간을 좁히는게 이쁘다.*/
+      margin: 0 0 30px 0;
+    }
+
+    section .container {
+      display: flex;
+      width: 1200px;
+      margin: 0 auto;
+      gap: 30px;
+    }
+
+    section .container figure {
+      position: relative;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    section img {
+      max-width: 100%;
+      transition: transform 0.5s;
+    }
+
+    .hover01 .box {
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 0;
+      height: 100%;
+      background: rgb(51, 51, 51, 1);
+      /*background에만 투명을 주면 글자는 그대로 유지됨*/
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /*opacity: 0.3; boc내부 모든것을 투명하게 만들어서 글자도 투명해졌다. 그러므로 안됨*/
+      transition: width 0.5s;
+    }
+
+    .hover01 .container figure:hover .box {
+      width: 150px;
+    }
+
+    .hover01 .container figure:hover img {
+      transform: translateX(100px);
+    }
+
+    /*hover02 시작*/
+    
+    .hover02 .container figure::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-top: 1px solid #000;
+      border-left: 1px solid #000;
+      transition: 0.5s;
+      box-sizing: border-box;
+      /*모서리 삐져나오는거 없앰*/
+      opacity: 0;
+      /*모서리에 점생긴걸 없앰*/
+    }
+
+    .hover02 .container figure::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000;
+      transition: 0.5s 0.3s;
+      box-sizing: border-box;
+      opacity: 0;
+    }
+
+    .hover02 .container figure:hover::before {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+    }
+
+    .hover02 .container figure:hover::after {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+    }
+
+    .hover02 img {
+      max-width: 100%;
+      transition: transform 0.5s;
+    }
+
+    .hover02 .box {
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 0;
+      height: 100%;
+      background: rgb(51, 51, 51, 1);
+      /*background에만 투명을 주면 글자는 그대로 유지됨*/
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /*opacity: 0.3; boc내부 모든것을 투명하게 만들어서 글자도 투명해졌다. 그러므로 안됨*/
+      transition: width 0.5s;
+    }
+
+    nav {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    nav>ul {
+      display: flex;
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav>ul>li {
+      position: relative;
+      flex: 1;
+      border-left: 1px solid #ddd;
+    }
+
+    nav>ul>li:last-child {
+      border-right: 1px solid #ddd;
+    }
+
+    nav>ul>li a {
+      display: block;
+      /*block 공간 전체에 손가락 됨*/
+    }
+
+    /* 가운데서 늘어나게 하려면 가운데 둔다! */
+    nav>ul>li::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: #f00;
+      /* positon 안줬을 땐 margin: 0 auto; 하면 중간에서 빨간 줄 시작*/
+      transition: 0.5s;
+    }
+
+    nav>ul>li:hover::after {
+      width: 100%;
+    }
+
+    /*hover03 시작*/
+    .hover03 figure::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 10px;
+      background: linear-gradient(to left, #ff0, #f00);
+      transition: .5s 1.5s;
+    }
+
+    .hover03 figure::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 10px;
+      height: 0%;
+      background: linear-gradient(to bottom, #ff0, green);
+      transition: .5s 1s;
+    }
+
+    .hover03 .box::before{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0%;
+      height: 10px;
+      background: linear-gradient(to right,purple,green);
+      transition: .5s .5s;
+    }
+
+    .hover03 .box::after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 10px;
+      height: 0%;
+      background: linear-gradient(to top,purple,#f00);
+      transition: .5s;
+    }
+
+    .hover03 figure:hover::before{   
+      width: 100%;
+      transition: .5s;
+    }
+
+    .hover03 figure:hover::after{
+      height: 100%;
+      transition: .5s 0.5s;
+    }
+
+    .hover03 figure:hover .box::before{
+      width: 100%;
+      transition: .5s 1s;
+    }
+
+    .hover03 figure:hover .box::after{
+      height: 100%;
+      transition: .5s 1.5s;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="">MENU1</a></li>
+      <li><a href="">MENU2</a></li>
+      <li><a href="">MENU3</a></li>
+      <li><a href="">MENU4</a></li>
+      <li><a href="">MENU5</a></li>
+    </ul>
+  </nav>
+
+  <section class="hover01">
+    <h2>hover를 사용해서 position을 배우자요</h2>
+    <p>hover를 이용한 position 이해를 배우면서 이쁜 것을 만들어 보아요</p>
+    <div class="container">
+      <figure>
+        <img src="../img/lesedilarona01.jpg" alt="">
+        <div class="box">
+          <a href="">HOVER</a>
+        </div>
+      </figure>
+      <figure>
+        <img src="../img/lesedilarona02.jpg" alt="">
+        <div class="box">
+          <a href="">HOVER</a>
+        </div>
+      </figure>
+      <figure>
+        <img src="../img/lesedilarona03.jpg" alt="">
+        <div class="box">
+          <a href="">HOVER</a>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="hover02">
+    <h2>hover를 사용해서 position을 배우자요</h2>
+    <p>hover를 이용한 position 이해를 배우면서 이쁜 것을 만들어 보아요</p>
+    <div class="container">
+      <figure>
+        <img src="../img/lesedilarona01.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="../img/lesedilarona02.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="../img/lesedilarona03.jpg" alt="">
+      </figure>
+    </div>
+  </section>
+
+  <section class="hover03">
+    <h2>hover를 사용해서 position을 배우자요</h2>
+    <p>hover를 이용한 position 이해를 배우면서 이쁜 것을 만들어 보아요</p>
+    <div class="container">
+      <figure>
+        <div class="box">
+          <!--속에  element있으므로 빈박스 아님, 의미있음-->
+          <img src="../img/lesedilarona01.jpg" alt="">
+        </div>
+      </figure>
+      <figure>
+        <div class="box">
+          <img src="../img/lesedilarona02.jpg" alt="">
+        </div>
+      </figure>
+      <figure>
+        <div class="box">
+          <img src="../img/lesedilarona03.jpg" alt="">
+        </div>
+      </figure>
+    </div>
+  </section>
+</body>
+
+</html>

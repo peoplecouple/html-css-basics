@@ -1,0 +1,191 @@
+#header{
+  line-height: 100px;
+  border-bottom: 1px solid #000;
+}
+
+#header .container{
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+#header .gnb ul{
+  display: flex;
+}
+
+#header .container ul>li>a {
+  display: block;
+  padding: 0 20px;
+}
+
+#header .container ul>li:last-child a{
+  padding: 0 0 0 20px
+}
+
+#main .main_visual{
+  position: relative;
+}
+
+#main .main_visual .main_slide figure{
+  position: relative;
+  height: 600px;
+  background-position: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+#main .main_visual .main_slide .itm01{
+  background-image: url(../img/mainvisual01.jpg);
+}
+#main .main_visual .main_slide .itm02{
+  background-image: url(../img/mainvisual02.jpg);
+}
+#main .main_visual .main_slide .itm03{
+  background-image: url(../img/mainvisual03.jpg);
+}
+
+.main_slide figure .inner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 1200px;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+}
+
+.main_slide figure .inner h2{
+  font-size: 55px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s;
+}
+
+.main_slide figure.on .inner h2{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.main_slide figure .inner p{
+  font-size: 21px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s 0.5s;
+}
+
+.main_slide figure.on .inner p{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.main_slide figure .inner a{
+  display: inline-block;
+  padding: 5px 20px 9px 20px;
+  border-radius: 5px;
+  background: #333;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s 1s;
+}
+
+.main_slide figure.on .inner a{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.main_visual .num{
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin: 0 0 0 600px;
+  transform: translateX(-100%);
+  width: 100px;
+  height: 100px;
+  background-position-y: 0;
+  background: url("../img/KakaoTalk_20220615_112745164.png");
+  transition: 1s;
+}
+
+.custom_dots{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  width: 1200px;
+  background: #ddd;
+}
+
+.custom_dots li{
+  flex: 1;
+  position: relative;
+}
+
+.custom_dots li~li{
+  border-left: 1px solid #fff;
+}
+
+.custom_dots li a{
+  position: relative;;
+  display: block;
+  padding: 10px;
+}
+
+.custom_dots li::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #f00;
+}
+
+.custom_dots li.on::before{
+  width: 100%;
+  transition: 1s;
+}
+
+.main_visual i{
+  font-size: 25px;
+  vertical-align: middle;
+}
+
+.custom_arrows i{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.custom_arrows i:hover{
+  cursor: pointer;
+}
+
+.custom_arrows i:nth-child(1){
+  margin: 0 0 0 -800px;
+}
+
+.custom_arrows i:nth-child(2){
+  margin: 0 0 0 800px;
+}
+
+.custom_play{
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  cursor: pointer;
+}
